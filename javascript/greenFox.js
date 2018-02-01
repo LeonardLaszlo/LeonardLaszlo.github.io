@@ -13,7 +13,7 @@ function drawFox(x, y, s) {
 
 function drawFoxes(width, height) {
   c.clearRect(0, 0, width, height);
-  var radius = (width > height ? height : width) * 0.25;
+  var radius = (width > height ? height : width) * 0.28;
   var density = 5;
   if (radius <= 150) {
     density = 3;

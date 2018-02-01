@@ -1,4 +1,4 @@
-function strokeTriangle(x, y, size) {
+function fillTriangle(x, y, size) {
   var aX = x, aY = y;
   var bX = x + size, bY = y;
   var cX = x + size/2, cY = y - size * Math.sqrt(3) / 2;
@@ -14,9 +14,9 @@ function strokeTriangle(x, y, size) {
 
 function strokeThreeTriangles(x, y, size) {
   if (size <= 32) {
-    strokeTriangle(x, y, size / 2);
-    strokeTriangle(x + size / 2, y, size / 2);
-    strokeTriangle(x + size / 4, y - size * Math.sqrt(3) / 4, size / 2);
+    fillTriangle(x, y, size / 2);
+    fillTriangle(x + size / 2, y, size / 2);
+    fillTriangle(x + size / 4, y - size * Math.sqrt(3) / 4, size / 2);
   } else {
     strokeThreeTriangles(x, y, size / 2);
     strokeThreeTriangles(x + size / 2, y, size / 2);
@@ -27,5 +27,5 @@ function strokeThreeTriangles(x, y, size) {
 function drawSierpinskiTriangle(width, height) {
   c.clearRect(0, 0, width, height);
   var size = (width > height ? height : width) * 0.95;
-  strokeThreeTriangles((width - size) / 2, height * 0.90, size);
+  strokeThreeTriangles((width - size) / 2, height * 0.87, size);
 }
